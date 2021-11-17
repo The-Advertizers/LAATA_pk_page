@@ -22,13 +22,17 @@ function Form({title, close}) {
 
         fetch(`${basePath}/bookAppointment.php`, {
             method: 'POST',
-            body: JSON.stringify(values)
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            mode: 'cors',
+            body: JSON.stringify(values),
         }).then(r => {
             if(r.ok){
-                // on Success
+                // TODO: navigate to Thanks
                 close();
             } else {
-                // show Error!
+                // TODO: show Error!
             }
         });
     }
