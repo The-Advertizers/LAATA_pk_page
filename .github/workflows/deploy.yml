@@ -20,7 +20,7 @@ jobs:
       - name: 🔨 Build Project
         run: |
           npm install
-          next build && next export
+          npm run static-build
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
