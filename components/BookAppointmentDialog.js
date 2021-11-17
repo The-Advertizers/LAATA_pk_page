@@ -17,12 +17,12 @@ function Form({title, close}) {
     }
 
     function handleSubmit(e) {
-        console.log(values);
         e.preventDefault();
-        let basePath = "https://londonaestheticsandtrainingacademy.com.pk/level-7-diploma"
         fetch(`${basePath}/bookAppointment.php`, {
             method: 'POST',
-            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify(values),
         }).then(r => {
             if(r.ok){
@@ -31,7 +31,7 @@ function Form({title, close}) {
             } else {
                 // TODO: show Error!
             }
-        });
+        }).catch(e => console.log(e));
     }
 
     return (
