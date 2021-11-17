@@ -1,0 +1,41 @@
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    @apply font-medium text-xl sm:text-2xl text-secondary;
+}
+
+h2 {
+    @apply font-medium text-lg sm:text-xl text-secondary;
+}
+
+p, li {
+    @apply text-xs sm:text-base;
+}
+
+.section {
+    @apply py-8 px-4 sm:px-8;
+}
+
+.section-screen {
+    @apply py-8 px-4 sm:px-8 min-h-device flex flex-col;
+}
+
+.button {
+    @apply whitespace-nowrap bg-accent-dark text-white py-2 px-4
+    shadow-md rounded-md cursor-pointer ease-in-out duration-300
+    flex items-center justify-center space-x-2 font-bold;
+}
+
+.button:hover {
+    @apply shadow-lg rounded-none;
+}
+
+/*TODO: add attributes to existing button */
+.xyz {
+    @apply inline-flex justify-center px-4 py-2 text-sm font-medium
+    text-blue-900 bg-blue-100 border border-transparent rounded-md
+    hover:bg-blue-200 focus:outline-none focus-visible:ring-2
+    focus-visible:ring-offset-2 focus-visible:ring-blue-500;
+}
