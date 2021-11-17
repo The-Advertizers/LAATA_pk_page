@@ -19,12 +19,9 @@ function Form({title, close}) {
     function handleSubmit(e) {
         console.log(values);
         e.preventDefault();
-
+        let basePath = "https://londonaestheticsandtrainingacademy.com.pk/level-7-diploma"
         fetch(`${basePath}/bookAppointment.php`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
             mode: 'cors',
             body: JSON.stringify(values),
         }).then(r => {
