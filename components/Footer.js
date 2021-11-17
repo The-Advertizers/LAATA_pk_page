@@ -1,4 +1,5 @@
 import {AtSymbolIcon, LocationMarkerIcon, PhoneIcon} from "@heroicons/react/solid";
+import {basePath} from "../next.config";
 
 export default function Footer() {
     return (
@@ -13,7 +14,7 @@ export default function Footer() {
                                 className='w-full grid md:grid-cols-2 grid-cols-1 overflow-auto md:overflow-hidden text-accent-lighter sm:place-items-center'>
                                 <div className='mt-8 px-2 place-self-center'>
                                     <img className={'h-20 md:h-24 w-auto bg-accent-lighter py-4 px-2 rounded-md'}
-                                         src={'/logo.png'}
+                                         src={`${basePath}/logo.png`}
                                          alt={'logo'}/>
                                     <p className={'font-semibold mt-2 text-center'}>Raising The Standards <br/> in
                                         Aesthetics</p>

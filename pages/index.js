@@ -5,11 +5,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Accordion from "../components/Accordion";
 
-import {Transition} from "@headlessui/react";
-import {Dialog} from "@headlessui/react";
-import {Fragment, useRef, useState} from "react";
-import {ChevronDoubleDownIcon, ChevronDoubleRightIcon, ChevronDownIcon} from "@heroicons/react/solid";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {useRef, useState} from "react";
+import {ChevronDoubleDownIcon, ChevronDoubleRightIcon} from "@heroicons/react/solid";
 import {
     faUserMd,
     faDesktop,
@@ -19,6 +16,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import StructureCard from "../components/StructureCard";
 import BookAppointmentDialog from "../components/BookAppointmentDialog";
+import {basePath} from "../next.config";
 
 
 const youtubeEmbedUrl = "https://www.youtube.com/embed/wxlNOnQ2jVg";
@@ -117,7 +115,7 @@ const whyChooseData = [
 ];
 
 export default function Home() {
-    let [isOpenModal, setIsOpenModal] = useState(true)
+    let [isOpenModal, setIsOpenModal] = useState(false)
 
     function closeModal() {
         setIsOpenModal(false)
@@ -134,7 +132,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center min-h-screen overflow-hidden">
                 <Head>
                     <title>Level 7 Diploma in injectables for clinical aesthetic treatments</title>
-                    <link rel="icon" href={"/favicon.png"}/>
+                    <link rel="icon" href={`${basePath}/favicon.png`}/>
                 </Head>
 
                 <Particles className="absolute -z-10 w-device h-device" url={'/particlesjs-config.json'}/>

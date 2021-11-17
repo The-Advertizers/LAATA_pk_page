@@ -1,5 +1,6 @@
 import {Dialog, Transition} from "@headlessui/react";
 import {Fragment, useState} from "react";
+import {basePath} from "../next.config";
 
 function Form({title, close}) {
     const [values, setValues] = useState({
@@ -19,7 +20,7 @@ function Form({title, close}) {
         console.log(values);
         e.preventDefault();
 
-        fetch('/bookAppointment.php', {
+        fetch(`${basePath}/bookAppointment.php`, {
             method: 'POST',
             body: JSON.stringify(values)
         }).then(r => {

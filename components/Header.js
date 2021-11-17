@@ -1,4 +1,5 @@
 import {AtSymbolIcon} from "@heroicons/react/outline";
+import {basePath} from "../next.config";
 
 export default function Header() {
     return (
@@ -12,7 +13,7 @@ export default function Header() {
                 <div className={'flex-shrink-0'}>
                     <img
                         className={`mx-8 my-8 sm:my-2 w-auto h-10 md:h-12`}
-                        src={'/logo.png'}
+                        src={`${basePath}/logo.png`}
                         alt={'logo'}
                     />
                 </div>
