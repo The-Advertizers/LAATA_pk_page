@@ -19,7 +19,7 @@ export default function Header() {
                 </div>
                 <div className={'flex items-center flex-shrink-1'}>
                     <a href="mailto:info@londonaestheticsandtrainingacademy.co.uk"
-                       className={`button`}>
+                       className="button">
                         <AtSymbolIcon className={'w-5 h-auto'}/>
                         <p className="hidden sm:block">Contact us</p>
                     </a>

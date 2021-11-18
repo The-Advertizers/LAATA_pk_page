@@ -1,121 +1,21 @@
 import Head from 'next/head'
 
-import Particles from "react-tsparticles";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Accordion from "../components/Accordion";
+import StructureCard from "../components/StructureCard";
+import ParticlesBackground from "../components/ParticlesBackground";
+import BookCourseDialog from "../components/BookCourseDialog";
 
+import data from '../data/level-7-diploma';
+import {basePath} from "../next.config";
 import {useRef, useState} from "react";
 import {ChevronDoubleDownIcon, ChevronDoubleRightIcon} from "@heroicons/react/solid";
-import {
-    faUserMd,
-    faDesktop,
-    faBookOpen,
-    faHandSparkles,
-    faPencilAlt,
-} from '@fortawesome/free-solid-svg-icons'
-import StructureCard from "../components/StructureCard";
-import BookAppointmentDialog from "../components/BookAppointmentDialog";
-import {basePath} from "../next.config";
-
-
-const youtubeEmbedUrl = "https://www.youtube.com/embed/wxlNOnQ2jVg";
-
-const faqData = [
-    {
-        "title": "What shall I bring with me?",
-        "body": "Absolutely nothing! Well, almost nothing.\n" +
-            "We have everything you need for the time you are with us but do ask that you come with a winning smile, " +
-            "appetite to learn, patience and passion."
-    },
-    {
-        "title": "Is the VTCT Level 7 Injectables course right for me?",
-        "body": "If you are thinking about starting a career in beauty and aesthetic trainings or to work as an " +
-            "entrepreneur. A level 7 training course is usually the right choice for you! This is a beginner to " +
-            "intermediate course, covering all the main topics regarding fillers and other types of injectables and " +
-            "its technical fundamentals i.e., everything you need to know about."
-    },
-    {
-        "title": "What is VTCT?",
-        "body": "Vocational Training Charitable Trust (VTCT) is a specialist awarding and assessment organisation " +
-            "offering vocational and technical qualifications across a variety of service sectors."
-    },
-    {
-        "title": "Will I gain practical experience during the Level 7 Injectables course?",
-        "body": "Yes! At London Aesthetics, due to our Hands-on training programme. You will develop useful skills " +
-            "to help you consult with clients. All our students work on models, enabling an in-depth understanding " +
-            "of the respective treatments."
-    },
-    {
-        "title": "Why choose London Aesthetics for this course?",
-        "body": "We offer various modern facilities to support you as you study your Level 7 Diploma in Injectables. " +
-            "Our range of injectables courses is designed to suit every individual, providing the tips, tools and " +
-            "skills required to meet the challenges of an ever-changing, highly competitive job market – " +
-            "never more important than right now! \n" +
-            "Choosing us is the right choice because other than the tech and tools required, we offer a professional" +
-            " environment with a focus on positive attitude for the students!"
-    },
-    {
-        "title": "How experienced are the teachers for this course?",
-        "body": "Our teachers here at London Aesthetics are highly qualified professionals who have worked in their " +
-            "respective fields for years in the industry. Our team of qualified trainers will ensure you benefit from" +
-            " the best-accredited courses the nail industry has to offer.\n" +
-            " All students taking our courses are guaranteed to be trained by passionate, experienced and focused nail" +
-            " technicians, ready and waiting to pass on their own experiences."
-    },
-];
-
-const structureData = [
-    {
-        "icon": faUserMd,
-        "title": "FOUNDATION AESTHETIC TRAINING COURSE",
-        "body": "Our one-day Foundation Aesthetic Training Course is your starting guide for a career in " +
-            "medical aesthetics helping you decide if you want to choose this as your path",
-    },
-    {
-        "icon": faDesktop,
-        "title": "ON-SITE TRAINING MODULES",
-        "body": "We believe in first hand and face to face learning. The tools and delegates for training will be " +
-            "provided with thorough and in-depth knowledge of aesthetics; ranging from understanding your patient, " +
-            "consulting them for their best and complications regarding the historical context of medical aesthetics.",
-    },
-    {
-        "icon": faPencilAlt,
-        "title": "QNA and ASSIGNMENTS",
-        "body": "This part of the course involves short answer questions consisting of an assignment paper of " +
-            "knowledge gained through your knowledge practice you acquired here. The research and modules that" +
-            " you study here will also get asked about.",
-    },
-    {
-        "icon": faBookOpen,
-        "title": "LECTURES AND OBSERVATIONS",
-        "body": "You will observe anti-wrinkle and dermal filler practice separately administered by our highly" +
-            " experienced and qualified practitioners that have been working in the respected fields for decades.",
-    },
-    {
-        "icon": faHandSparkles,
-        "title": "HANDS-ON TRAINING PROGRAM",
-        "body": "The program that makes us stand apart from other training academies is our hands on training " +
-            "module. You will administer anti-wrinkle injections and Dermal Filler treatments on models under the" +
-            " supervision of our expert trainers to show what you learned in the process.",
-    },
-];
-
-const whyChooseData = [
-    "Top leading level 7 diploma from VTCT",
-    "Hands-on training program",
-    "100% pass rate",
-    "Consultation and pitching skills",
-    "Live models for practice",
-    "Our accredited courses are developed in line and according to CPD standards",
-    "We are an CPD and UK approved training centre",
-    "We’ve trained over thousands of medical professionals/ clinicians in aesthetic treatments",
-    "Courses are taught by chosen team of highly professional doctors, nurses and medical practitioners",
-    "Courses being held in fully functioning clinic environments across many locations internationally"
-];
+import TeamMemberCard from "../components/TeamMemberCard";
 
 export default function Home() {
-    let [isOpenModal, setIsOpenModal] = useState(false)
+    const details = useRef(null);
+    const [isOpenModal, setIsOpenModal] = useState(false);
 
     function closeModal() {
         setIsOpenModal(false)
@@ -125,8 +25,6 @@ export default function Home() {
         setIsOpenModal(true)
     }
 
-    const details = useRef(null);
-
     return (
         <>
             <div className="flex flex-col items-center justify-center min-h-screen overflow-hidden">
@@ -135,8 +33,8 @@ export default function Home() {
                     <link rel="icon" href={`${basePath}/favicon.png`}/>
                 </Head>
 
-                <Particles className="absolute -z-10 w-device h-device" url={`${basePath}/particlesjs-config.json`}/>
-                <div className="container section-screen mx-auto justify-between sm:items-center">
+                <ParticlesBackground/>
+                <div className="container section-screen mx-auto sm:justify-between items-center">
                     <Header/>
                     <div>
                         <h1>
@@ -184,7 +82,7 @@ export default function Home() {
                                  data-class-in="translate-x-0 opacity-100"
                                  data-class-out="translate-x-32 opacity-0"
                             >
-                                <iframe src={youtubeEmbedUrl}
+                                <iframe src={data.youtubeURL}
                                         className="w-full rounded-xl"
                                         title="YouTube video player"
                                         frameBorder="0"
@@ -207,9 +105,7 @@ export default function Home() {
                     <h1 className="mb-4">STRUCTURE OF THE LEVEL 7 DIPLOMA IN INJECTABLES FOR MEDICAL AESTHETIC
                         TREATMENTS</h1>
                     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-                        {structureData.map((data, i) =>
-                            StructureCard(data, i)
-                        )}
+                        {data.structure.map(StructureCard)}
                     </div>
                 </div>
 
@@ -219,7 +115,7 @@ export default function Home() {
                          data-class-in="translate-x-0 opacity-100"
                          data-class-out="translate-x-32 opacity-0">
                         <ul className="list-disc pl-8">
-                            {whyChooseData.map((why, i) =>
+                            {data.whyChoose.map((why, i) =>
                                 <li key={i}>{why}</li>
                             )}
                         </ul>
@@ -245,16 +141,19 @@ export default function Home() {
                     <div className='duration-300 sm:m-8 rounded overflow-hidden'
                          data-class-in="translate-x-0 opacity-100"
                          data-class-out="-translate-x-32 opacity-0">
-                        {
-                            faqData.map((faq, i) => {
-                                return Accordion(faq, i);
-                            })
-                        }
+                        {data.faq.map(Accordion)}
+                    </div>
+                </div>
+
+                <div className="container mx-auto section">
+                    <h1 className="mb-8">OUR CLINICAL LEADS</h1>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        {data.team.map(TeamMemberCard)}
                     </div>
                 </div>
             </div>
             <Footer/>
-            <BookAppointmentDialog
+            <BookCourseDialog
                 isOpen={isOpenModal}
                 closeModal={closeModal}
                 appointmentTitle={"Level 7 diploma in injectables for medical aesthetic treatment"}

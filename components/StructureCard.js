@@ -6,7 +6,7 @@ export default function StructureCard(data, i) {
              data-class-in="translate-x-0 opacity-100"
              data-class-out="odd:-translate-x-32 translate-x-32 opacity-0">
             <div className="flex flex-col sm:flex-row items-center sm:space-x-6 mb-4">
-                <div className="bg-accent-lighter p-4 rounded-lg">
+                <div className="bg-accent-lighter p-4 rounded-lg shadow-2xl">
                     <FontAwesomeIcon className="flex-shrink-0 w-6 h-auto text-secondary" icon={data.icon}/>
                 </div>
                 <h2 className="pt-4 sm:pt-0 text-secondary text-center sm:text-left font-bold">{data.title}</h2>

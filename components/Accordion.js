@@ -2,7 +2,7 @@ import {ChevronDownIcon} from "@heroicons/react/solid";
 
 export default function Accordion(data, i) {
     return (
-        <div key={i} className="group outline-none accordion-section" tabIndex={i}>
+        <div key={i} className="group outline-none" tabIndex={i}>
             <div
                 className="group bg-accent-lighter flex justify-between px-4 py-3 items-center text-secondary
                 transition ease duration-500 cursor-pointer pr-10 relative">

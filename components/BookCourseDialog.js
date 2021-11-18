@@ -8,7 +8,7 @@ function Form({title, close}) {
         "phone": "",
         "email": "",
         "message": "",
-        "service": title
+        "course": title
     });
 
     function setValue(key, value) {
@@ -18,7 +18,7 @@ function Form({title, close}) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch(`${basePath}/bookAppointment.php`, {
+        fetch(`${basePath}/bookCourse.php`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -137,7 +137,7 @@ function Form({title, close}) {
     );
 }
 
-export default function BookAppointmentDialog({isOpen, closeModal, appointmentTitle}) {
+export default function BookCourseDialog({isOpen, closeModal, courseTitle: courseTitle}) {
     return (
         <>
             <Transition appear show={isOpen} as={Fragment}>
@@ -155,7 +155,7 @@ export default function BookAppointmentDialog({isOpen, closeModal, appointmentTi
                             leaveFrom="opacity-100"
                             leaveTo="opacity-0">
                             <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-30 backdrop-filter
-                             backdrop-blur-sm bg-opacity-90"/>
+                             backdrop-blur-sm"/>
                         </Transition.Child>
 
                         {/* This element is to trick the browser into centering the modal contents. */}
@@ -177,13 +177,13 @@ export default function BookAppointmentDialog({isOpen, closeModal, appointmentTi
                                 <Dialog.Title
                                     as="h3"
                                     className="text-secondary text-lg font-bold leading-6">
-                                    Book Appointment
+                                    Book Your Course
                                 </Dialog.Title>
                                 <div className="mt-2">
                                     <p className="text-sm text-gray-500">
                                         Fill in the details below and our team will contact you shortly.
                                     </p>
-                                    <Form title={appointmentTitle} close={closeModal}/>
+                                    <Form title={courseTitle} close={closeModal}/>
                                 </div>
                             </div>
                         </Transition.Child>
