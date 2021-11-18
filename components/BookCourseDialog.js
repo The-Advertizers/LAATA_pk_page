@@ -2,6 +2,7 @@ import {Dialog, Transition} from "@headlessui/react";
 import {Fragment, useState} from "react";
 import {basePath} from "../next.config";
 import {useRouter} from "next/router";
+import * as fbq from "../lib/fpixel";
 
 function Form({title, close}) {
     const router = useRouter();
@@ -30,7 +31,8 @@ function Form({title, close}) {
         }).then(async r => {
             if (r.ok) {
                 close();
-                await router.push(`/thankyou`)
+                fbq.event('Lead');
+                await router.push(`/thankyou`);
             }
         }).catch(e => console.log(e));
     }

@@ -1,8 +1,12 @@
 import Head from "next/head";
 import ParticlesBackground from "../components/ParticlesBackground";
 import {basePath} from "../next.config";
+import {useEffect} from "react";
+import * as fbq from "../lib/fpixel";
 
 export default function ThankYou() {
+    useEffect(fbq.pageview, []);
+
     return (
         <>
             <Head>

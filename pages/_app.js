@@ -3,6 +3,7 @@ import '../style.css';
 
 import anim from "../animasection";
 import {useEffect} from "react";
+import FacebookPixel from "../components/FacebookPixel";
 
 export default function MyApp({Component, pageProps}) {
 
@@ -11,5 +12,9 @@ export default function MyApp({Component, pageProps}) {
         anim.observeAll();
     }, []);
 
-    return <Component {...pageProps} />
+    return (
+        <FacebookPixel>
+            <Component {...pageProps} />
+        </FacebookPixel>
+    );
 }

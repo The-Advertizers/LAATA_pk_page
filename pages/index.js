@@ -9,9 +9,10 @@ import BookCourseDialog from "../components/BookCourseDialog";
 
 import data from '../data/level-7-diploma';
 import {basePath} from "../next.config";
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {ChevronDoubleDownIcon, ChevronDoubleRightIcon} from "@heroicons/react/solid";
 import TeamMemberCard from "../components/TeamMemberCard";
+import * as fbq from "../lib/fpixel";
 
 export default function Home() {
     const details = useRef(null);
@@ -24,6 +25,8 @@ export default function Home() {
     function openModal() {
         setIsOpenModal(true)
     }
+
+    useEffect(fbq.pageview, []);
 
     return (
         <>
