@@ -30,7 +30,7 @@ function Form({title, close}) {
         }).then(async r => {
             if (r.ok) {
                 close();
-                await router.push(`${basePath}/thankyou`)
+                await router.push(`/thankyou`)
             }
         }).catch(e => console.log(e));
     }
