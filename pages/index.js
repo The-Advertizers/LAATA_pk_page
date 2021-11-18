@@ -135,7 +135,7 @@ export default function Home() {
                     <link rel="icon" href={`${basePath}/favicon.png`}/>
                 </Head>
 
-                <Particles className="absolute -z-10 w-device h-device" url={'/particlesjs-config.json'}/>
+                <Particles className="absolute -z-10 w-device h-device" url={`${basePath}/particlesjs-config.json`}/>
                 <div className="container section-screen mx-auto justify-between sm:items-center">
                     <Header/>
                     <div>
