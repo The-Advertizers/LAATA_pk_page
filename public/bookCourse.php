@@ -33,12 +33,13 @@
         $date = date("d-m-Y h:i:s a", strtotime('+5 hours'));
 
         $to = "info@londonaestheticandspa.co.uk";
-        $from = "booking@londonaestheticandspa.co.uk";
+        $from = "booking@londonaestheticsandtrainingacademy.com.pk";
         $bcc = "sayyam@theadvertizers.com";
 
-        $to = "humzaa2z@gmail.com";
-        $from = "booking@londonaestheticsandtrainingacademy.com.pk";
-        $bcc = "";
+        // values override for testing
+//         $from = "booking@londonaestheticsandtrainingacademy.com.pk";
+//         $to = "humzaa2z@gmail.com";
+//         $bcc = "";
 
         $message = "
         <!DOCTYPE html>
@@ -91,7 +92,7 @@
 
         if(empty($name) || empty($phone)){
             http_response_code(400);
-        } else if (mail($to, "Appointment Booking", $message, $header)) {
+        } else if (mail($to, "Course Booking", $message, $header)) {
             http_response_code(200);
         } else {
             http_response_code(500);

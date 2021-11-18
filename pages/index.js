@@ -156,7 +156,7 @@ export default function Home() {
             <BookCourseDialog
                 isOpen={isOpenModal}
                 closeModal={closeModal}
-                appointmentTitle={"Level 7 diploma in injectables for medical aesthetic treatment"}
+                courseTitle={"Level 7 diploma in injectables for medical aesthetic treatment"}
             />
         </>
     )
