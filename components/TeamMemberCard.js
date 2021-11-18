@@ -1,8 +1,8 @@
 import {basePath} from "../next.config";
 
-export default function ({name, designation, details, image, prominent_details}) {
+export default function ({name, designation, details, image, prominent_details}, i) {
     return (
-        <div
+        <div key={i}
             className="group duration-300 w-full bg-white border rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row"
             data-class-in="translate-x-0 opacity-100"
             data-class-out="odd:-translate-x-32 translate-x-32 opacity-0">

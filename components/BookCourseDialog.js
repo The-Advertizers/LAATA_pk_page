@@ -1,8 +1,11 @@
 import {Dialog, Transition} from "@headlessui/react";
 import {Fragment, useState} from "react";
 import {basePath} from "../next.config";
+import {useRouter} from "next/router";
 
 function Form({title, close}) {
+    const router = useRouter();
+
     const [values, setValues] = useState({
         "name": "",
         "phone": "",
@@ -24,12 +27,10 @@ function Form({title, close}) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(values),
-        }).then(r => {
-            if(r.ok){
-                // TODO: navigate to Thanks
+        }).then(async r => {
+            if (r.ok) {
                 close();
-            } else {
-                // TODO: show Error!
+                await router.push(`${basePath}/thankyou`)
             }
         }).catch(e => console.log(e));
     }
