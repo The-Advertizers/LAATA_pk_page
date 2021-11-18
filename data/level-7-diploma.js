@@ -96,7 +96,7 @@ export default {
         {
             "image": "team_dr_adnan.jpeg",
             "name": "Dr. Adnan Bashir",
-            "designation": "Treatment Doctor",
+            "designation": "Experienced Aesthetic Trainer",
             "prominent_details": [
                 "Senior Doctor and Aesthetician"
             ],
@@ -111,7 +111,7 @@ export default {
         {
             "image": "team_dr_madiha.jpeg",
             "name": "Dr. Madiha Javed",
-            "designation": "Instructor",
+            "designation": "Experienced Aesthetic Trainer",
             "details": [
                 "BSC, MBBS (Punjab), RMP, Gold Medalist",
                 "Certified from Lennox Hill Hospital, USA.",
@@ -122,7 +122,7 @@ export default {
         {
             "image": "team_dr_somia.jpeg",
             "name": "Dr. Somia Zameer",
-            "designation": "Treatment Doctor",
+            "designation": "Experienced Aesthetic Trainer",
             "details": [
                 "MBBS, RMP, Dermatologist",
                 "MSC Clinical Dermatology (UK),",
@@ -133,7 +133,7 @@ export default {
         {
             "image": "team_dr_waqas.jpeg",
             "name": "Dr. Waqas Siddiqui",
-            "designation": "Instructor",
+            "designation": "Experienced Aesthetic Trainer",
             "details": [
                 "Graduated form University of Lahore",
                 "Certified Aesthetian & Physiotherapist",
