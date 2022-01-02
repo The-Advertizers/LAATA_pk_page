@@ -1,4 +1,5 @@
 import {AtSymbolIcon} from "@heroicons/react/outline";
+import Link from "next/link";
 import {basePath} from "../next.config";
 
 export default function Header() {
@@ -11,12 +12,15 @@ export default function Header() {
                 className={`container sm:py-4 md:py-8 px-8 flex items-center justify-center sm:justify-between`}>
                 <div className={'sm:hidden'}/>
                 <div className={'flex-shrink-0'}>
-                    <img
-                        className={`mx-8 my-8 sm:my-2 w-auto h-10 md:h-12`}
-                        src={`${basePath}/logo.png`}
-                        alt={'logo'}
-                    />
+                    <Link href={'/'}>
+                        <img
+                            className={`mx-8 my-8 sm:my-2 w-auto h-10 md:h-12 cursor-pointer`}
+                            src={`${basePath}/logo.png`}
+                            alt={'logo'}
+                        />
+                    </Link>
                 </div>
+
                 <div className={'flex items-center flex-shrink-1'}>
                     <a href="mailto:info@londonaestheticsandtrainingacademy.co.uk"
                        className="button">
@@ -24,6 +28,20 @@ export default function Header() {
                         <p className="hidden sm:block">Contact us</p>
                     </a>
                 </div>
+            </div>
+
+            <div className={'bg-accent-lighter py-4 px-8 flex flex-wrap items-center justify-start space-x-8 '}>
+                <Link href={'/qualifications'}>
+                    <div className={'cursor-pointer text-secondary font-bold underline'}>Qualifications</div>
+                </Link>
+
+                <Link href={'/progression-faqs'}>
+                    <div className={'cursor-pointer text-secondary font-bold underline'}>FAQ's</div>
+                </Link>
+
+                <Link href={'/university-progression'}>
+                    <div className={'cursor-pointer text-secondary font-bold underline'}>University Progression</div>
+                </Link>
             </div>
         </div>
     );

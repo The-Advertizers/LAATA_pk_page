@@ -4,6 +4,7 @@ import '../style.css';
 import anim from "../animasection";
 import {useEffect} from "react";
 import FacebookPixel from "../components/FacebookPixel";
+import Layout from "../components/Layout";
 
 export default function MyApp({Component, pageProps}) {
 
@@ -14,7 +15,9 @@ export default function MyApp({Component, pageProps}) {
 
     return (
         <FacebookPixel>
-            <Component {...pageProps} />
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
         </FacebookPixel>
     );
 }
