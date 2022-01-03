@@ -18,6 +18,7 @@ jobs:
           echo "module.exports = {basePath: '/LAATA_pk_page', assetPrefix: '/LAATA_pk_page/',}" > next.config.js
           npm ci
           npm run static-build
+          touch ./out/.nojekyll
       
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.7
