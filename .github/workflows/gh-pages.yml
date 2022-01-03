@@ -15,6 +15,7 @@ jobs:
           
       - name: Install and Build 🔧
         run: |
+          echo "module.exports = "{\nbasePath: '/LAATA_pk_page',\n}" > next.config.js
           npm ci
           npm run static-build
       
